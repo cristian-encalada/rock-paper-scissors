@@ -1,17 +1,10 @@
-function getComputerChoice()
-{
+function getComputerChoice() {
     let options = ['ROCK', 'PAPER', 'SCISSORS']
     let randomChoice = options[Math.floor(Math.random() * options.length)];
     return randomChoice;
 }
 
-const playerSelection = "SCISSORS".toUpperCase();
-console.log(`Your selection: ${playerSelection}`);
-const computerSelection = getComputerChoice().toUpperCase();
-console.log(`Computer selection ${computerSelection}`);
-
-function playRound(playerSelection, computerSelection)
-{
+function playRound(playerSelection, computerSelection) {
     if (playerSelection == computerSelection)
     {
         return ('Tie!')
@@ -37,6 +30,19 @@ function playRound(playerSelection, computerSelection)
         else
             return (`You lose! ${computerSelection} beats ${playerSelection}`);
     }
+    else {
+        return ('Invalid option');
+    }
 }
 
-console.log(playRound(playerSelection, computerSelection));
+function playGame() {
+    for (let i = 0; i < 5; i++){
+        const playerSelection = prompt("Choose between paper, rock or scissors. Type one:").toUpperCase();;
+        console.log(`Your selection: ${playerSelection}`);
+        const computerSelection = getComputerChoice().toUpperCase();
+        console.log(`Computer selection ${computerSelection}`);
+        console.log(playRound(playerSelection, computerSelection));
+    }
+}
+
+playGame();

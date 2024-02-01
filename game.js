@@ -1,13 +1,13 @@
 function getComputerChoice()
 {
-    let options = ['Rock', 'Paper', 'Scissors']
+    let options = ['ROCK', 'PAPER', 'SCISSORS']
     let randomChoice = options[Math.floor(Math.random() * options.length)];
     return randomChoice;
 }
 
-const playerSelection = "Rock";
+const playerSelection = "SCISSORS".toUpperCase();
 console.log(`Your selection: ${playerSelection}`);
-const computerSelection = getComputerChoice();
+const computerSelection = getComputerChoice().toUpperCase();
 console.log(`Computer selection ${computerSelection}`);
 
 function playRound(playerSelection, computerSelection)
@@ -16,23 +16,23 @@ function playRound(playerSelection, computerSelection)
     {
         return ('Tie!')
     }
-    else if (playerSelection == 'Rock')
+    else if (playerSelection == 'ROCK')
     {
-        if (computerSelection == 'Scissors')
+        if (computerSelection == 'SCISSORS')
             return (`You win! ${playerSelection} beats ${computerSelection}`);
         else
             return (`You lose! ${computerSelection} beats ${playerSelection}`);
     }
-    else if (playerSelection == 'Paper')
+    else if (playerSelection == 'PAPER')
     {
-        if (computerSelection == 'Rock')
+        if (computerSelection == 'ROCK')
             return (`You win! ${playerSelection} beats ${computerSelection}`);
         else
             return (`You lose! ${computerSelection} beats ${playerSelection}`);
     }
-    else if (playerSelection == 'Scissors')
+    else if (playerSelection == 'SCISSORS')
     {
-        if (computerSelection == 'Paper')
+        if (computerSelection == 'PAPER')
             return (`You win! ${playerSelection} beats ${computerSelection}`);
         else
             return (`You lose! ${computerSelection} beats ${playerSelection}`);
